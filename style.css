@@ -1,0 +1,242 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans 3", "Roboto", sans-serif;
+    background-color: #FFFFFF;
+    color: #505050;
+}
+
+/* ------- Header ------- */
+header{
+    padding: 1rem;
+}
+
+header, .logo-and-title{
+    display: flex;
+    align-items: center;
+}
+
+.fa-book{
+    font-size: 1rem;
+}
+
+.title-name{
+    font-family: "Roboto", "Source Sans 3", sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding-left: 0.25em;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+}
+    
+.nav-link {
+    color: black;
+    font-size: 0.875rem;
+    padding: 0 0.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+    
+.nav-link:hover {
+    cursor: pointer;
+}
+    
+.nav-link:focus-visible {
+    outline: 2px solid #202020;
+}
+
+/* ------- Main ------- */
+
+/* ------- Featured Post ------- */
+.featured-post {
+    background-image: url(../images/feature-img.png);
+    background-size: cover;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 300px;
+    padding: 1.25em;
+    text-decoration: none;
+}
+    
+.featured-post:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+    
+.date {
+    font-size: var(--font-sm);
+    margin: 0;
+}
+    
+.page-header {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 0;
+}
+    
+.featured-text {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    margin: 0;
+}
+
+/* ------ Blog Grid ------- */
+
+.blog-grid {
+    display: grid;
+    gap: 3em 0;
+    grid-template-columns: minmax(1em, auto) 1fr minmax(1em, auto);
+    grid-template-areas:
+        "... ... ..."
+        "... brc ..."
+        "... bdv ..."
+        "... css ..."
+        "... gpp ..."
+        "... inl ..."
+        "... jsn ..."
+        "... ... ...";
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+/* Ensure all images have the same size */
+.blog-post img {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensures images maintain aspect ratio while being cropped to fit */
+    display: block;
+}
+
+.blog-post time {
+    display: block;
+    font-size: 0.85em;
+    color: #666;
+    margin: 12px 20px 0;
+}
+
+.blog-post h2 {
+    font-size: 1.25em;
+    margin: 10px 20px 0;
+    color: #333;
+}
+
+.blog-post p {
+    font-size: 0.95em;
+    margin: 10px 20px 20px;
+    color: #555;
+}
+
+.blog-post a {
+    display: inline-block;
+    margin: 0 20px 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+.broke-code { grid-area: brc; }
+.bad-variables { grid-area: bdv; }
+.css-cant-style { grid-area: css; }
+.git-push-pray { grid-area: gpp; }
+.infinite-loop { grid-area: inl; }
+.js-nightmares { grid-area: jsn; }
+
+
+.text-multi-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* ------- Footer ------- */
+
+footer {
+    background-color: #202020;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 105px;
+    text-align: center;
+}
+    
+.footer-title,
+.copyright {
+    font-size: 0.875rem;
+    margin: 0;
+}
+    
+.footer-title {
+    font-weight: bold;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+    .title-name {
+        font-size: 1.25rem;
+    }
+    
+    .fa-book {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 0 0.5em;
+    }
+    
+    .featured-post {
+        background-image: url(../images/feature-img-wide.png);
+        height: 380px;
+        padding: 3.375rem;
+    }
+    
+    .date {
+        font-size: 1rem;
+    }
+    
+    .featured-title {
+        font-size: 2.5rem;
+        width: 60%;
+    }
+    
+    .featured-text {
+        width: 60%;
+    }
+    
+    .text-multi-line {
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+    }
+    .blog-grid {
+        gap: 3em 2em;
+        grid-template-columns: 1em repeat(3, 1fr) 1em;
+        grid-template-areas:
+        "... ... ... ... ..."
+        "... brc bdv css ..."
+        "... gpp inl jsn ..."
+        "... ... ... ... ...";
+    }
+}
