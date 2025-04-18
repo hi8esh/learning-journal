@@ -152,6 +152,8 @@ nav {
     text-decoration: underline;
 }
 
+/* ------- Layout ------- */
+
 .broke-code { grid-area: brc; }
 .bad-variables { grid-area: bdv; }
 .css-cant-style { grid-area: css; }
@@ -192,8 +194,21 @@ footer {
 
 
 /* Media Queries */
+@media (min-width: 600px){
+    .blog-grid {
+        gap: 3em 2em;
+        grid-template-columns: 1em repeat(2, 1fr) 1em;
+        grid-template-areas:
+        "... ... ... ..."
+        "... brc bdv ..."
+        "... css gpp ..."
+        "... inl jsn ..."
+        "... ... ... ...";
+    }
 
-@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
     .title-name {
         font-size: 1.25rem;
     }
