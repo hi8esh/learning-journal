@@ -350,9 +350,6 @@ footer {
         "... gpp inl jsn ..."
         "... ... ... ... ...";
     }
-    .blog-post {
-        margin-bottom: 1.5rem; /* Add some bottom spacing to posts */
-    }
     .view-more-wrapper {
         text-align: center;   /* Less top margin */
         margin: -4em 1em 2em;
