@@ -28,7 +28,7 @@
         </nav>
     </header>
     <main>
-        <a class="featured-post" href="./pages/learning-journey.html">
+        <a class="featured-post" href="./posts/learning-journey.html">
             <div class="featured-content">
                 <time class="date" datetime="2025-04-17">April 17, 2025</time>
                 <h1 class="page-header">My New Journey: Learning to Code (and Cry a Little)</h1>
@@ -41,56 +41,58 @@
             </div>
         </a>
 
-        <div class="blog-grid">
-            <div class="blog-post broke-code">
+        <div class="blog-grid" id="blogGrid">
+            <div class="blog-post broke-code post-item">
                 <img src="./images/Semicolon-Error.jpg" alt="Frustrated coder at computer">
                 <time datetime="2025-04-10">April 10, 2025</time>
                 <h2>How I Broke My Code (and My Spirit)</h2>
                 <p>Day 3: I mistook a semicolon for a life decision. Debugging my code and my choices now.</p>
-                <a href="#">Read more</a>
+                <a href="./posts/broke-code.html">Read more</a>
             </div>
-            <div class="blog-post bad-variables">
+            <div class="blog-post bad-variables post-item">
                 <img src="./images/variable-naming.jpg" alt="Thinking deeply about code">
                 <time datetime="2025-04-08">April 8, 2025</time>
                 <h2>Variables & Very Bad Decisions</h2>
                 <p>I named it <code>x</code>. Then forgot what <code>x</code> meant. Now it's Schrodinger's variable.</p>
-                <a href="#">Read more</a>
+                <a href="./posts/bad-variables.html">Read more</a>
             </div>
-            <div class="blog-post css-cant-style">
+            <div class="blog-post css-cant-style post-item">
                 <img src="./images/css-styling.png" alt="CSS chaos">
                 <time datetime="2025-04-05">April 5, 2025</time>
                 <h2>CSS: Can’t Style Stuff</h2>
                 <p>All I wanted was to center a div. Now I'm centered in existential crisis instead.</p>
-                <a href="#">Read more</a>
+                <a href="./posts/css-cant-style.html">Read more</a>
             </div>
-            <div class="blog-post git-push-pray">
+            <div class="blog-post git-push-pray post-item hidden-post">
                 <img src="./images/git-push-and-pray.jpg" alt="Git commit stress">
                 <time datetime="2025-04-02">April 2, 2025</time>
                 <h2>Git Push and Pray</h2>
                 <p>I pushed to main without testing. It worked. Now I fear I broke the laws of nature.</p>
-                <a href="#">Read more</a>
+                <a href="./posts/git-push-pray.html">Read more</a>
             </div>
-            <div class="blog-post infinite-loop">
+            <div class="blog-post infinite-loop post-item hidden-post">
                 <img src="./images/infinite-loop.png" alt="Infinite loop on screen">
                 <time datetime="2025-03-30">March 30, 2025</time>
                 <h2>Loops Got Me Looping</h2>
                 <p>I made an infinite loop. My code froze. My brain did too. Time is a flat circle now.</p>
-                <a href="#">Read more</a>
+                <a href="./posts/infinite-loop.html">Read more</a>
             </div>
-            <div class="blog-post js-nightmares">
+            <div class="blog-post js-nightmares post-item hidden-post">
                 <img src="./images/async-await.png" alt="JavaScript confusion">
                 <time datetime="2025-03-27">March 27, 2025</time>
                 <h2>JavaScript and Other Nightmares</h2>
                 <p>Async? Await? I just wanted a webpage, not an emotional journey through callbacks.</p>
-                <a href="#">Read more</a>
+                <a href="./posts/js-nightmares.html">Read more</a>
             </div>
-        </div>        
-        
-
+        </div>
+        <div class="view-more-wrapper">
+            <button id="viewMoreBtn">View More Posts</button>
+        </div>
     </main>
     <footer>
         <p class="footer-title">My Learning Journal</p>
         <p class="copyright">Copyright &copy;2025</p>
     </footer>
 </body>
+<script type="module" src="js/add-more.js"></script>
 </html>

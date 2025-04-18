@@ -1,4 +1,5 @@
-body{
+/* General body styling */
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,20 +9,20 @@ body{
 }
 
 /* ------- Header ------- */
-header{
+header {
     padding: 1rem;
 }
 
-header, .logo-and-title{
+header, .logo-and-title {
     display: flex;
     align-items: center;
 }
 
-.fa-book{
+.fa-book {
     font-size: 1rem;
 }
 
-.title-name{
+.title-name {
     font-family: "Roboto", "Source Sans 3", sans-serif;
     font-size: 0.875rem;
     font-weight: bold;
@@ -51,7 +52,39 @@ nav {
 
 /* ------- Main ------- */
 
-/* ------- Featured Post ------- */
+.blog-post-full {
+    padding: 2rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.blog-post-full img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-full h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #333;
+    margin: 1rem 0;
+}
+
+.blog-post-full p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post-full time {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+/* ------- Featured Post Styles for the homepage (not used on individual posts but can be reused) ------- */
 .featured-post {
     background-image: url(../images/feature-img.png);
     background-size: cover;
@@ -68,7 +101,7 @@ nav {
     cursor: pointer;
     opacity: 0.9;
 }
-    
+
 .date {
     font-size: var(--font-sm);
     margin: 0;
@@ -86,6 +119,7 @@ nav {
 
 /* ------ Blog Grid ------- */
 
+/* --- Post Preview Styles --- */
 .blog-grid {
     display: grid;
     gap: 3em 0;
@@ -113,13 +147,26 @@ nav {
     transform: translateY(-5px);
 }
 
-/* Ensure all images have the same size */
+/* Images inside blog cards (grid layout) */
 .blog-post img {
     width: 100%;
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Ensures images maintain aspect ratio while being cropped to fit */
+    height: 200px;
+    object-fit: cover;
     display: block;
+    border-radius: 8px;
 }
+
+/* Images inside full blog posts */
+.blog-post-full img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 .blog-post time {
     display: block;
@@ -152,8 +199,7 @@ nav {
     text-decoration: underline;
 }
 
-/* ------- Layout ------- */
-
+/* Layout for Grid Posts */
 .broke-code { grid-area: brc; }
 .bad-variables { grid-area: bdv; }
 .css-cant-style { grid-area: css; }
@@ -169,9 +215,39 @@ nav {
     overflow: hidden;
 }
 
+/* ------- View More button ------- */
+
+.hidden-post {
+    display: none;
+    margin-bottom: 1.5rem;
+}
+
+.view-more-wrapper {
+    text-align: center;   /* Less top margin */
+    margin: -10em 1em 2em;
+    margin-bottom: 2rem;  /* Still a bit of space before footer */
+}
+
+#viewMoreBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.6em 1.2em;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;  /* Ensure it's spaced from the grid */
+}
+
+
+#viewMoreBtn:hover {
+    background-color: #0056b3;
+}
+
+
 
 /* ------- Footer ------- */
-
 footer {
     background-color: #202020;
     color: whitesmoke;
@@ -192,9 +268,24 @@ footer {
     font-weight: bold;
 }
 
-
 /* Media Queries */
-@media (min-width: 600px){
+
+@media (max-width: 600px) {
+    .blog-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1em;
+    }
+
+    .blog-post {
+        margin-bottom: 1.5rem; /* Add some bottom spacing to posts */
+    }
+
+    .view-more-wrapper {
+        margin-top: 1rem; /* Ensure there’s some spacing above the button */
+    }
+}
+
+@media (min-width: 600px) {
     .blog-grid {
         gap: 3em 2em;
         grid-template-columns: 1em repeat(2, 1fr) 1em;
@@ -205,7 +296,11 @@ footer {
         "... inl jsn ..."
         "... ... ... ...";
     }
-
+    .view-more-wrapper {
+        text-align: center;   /* Less top margin */
+        margin: -4em 1em 2em;
+        margin-bottom: 2rem;  /* Still a bit of space before footer */
+    }
 }
 
 @media (min-width: 992px) {
@@ -245,13 +340,22 @@ footer {
         -webkit-line-clamp: 5;
         line-clamp: 5;
     }
+
     .blog-grid {
-        gap: 3em 2em;
+        gap: 3em 5%;
         grid-template-columns: 1em repeat(3, 1fr) 1em;
         grid-template-areas:
         "... ... ... ... ..."
         "... brc bdv css ..."
         "... gpp inl jsn ..."
         "... ... ... ... ...";
+    }
+    .blog-post {
+        margin-bottom: 1.5rem; /* Add some bottom spacing to posts */
+    }
+    .view-more-wrapper {
+        text-align: center;   /* Less top margin */
+        margin: -4em 1em 2em;
+        margin-bottom: 2rem;  /* Still a bit of space before footer */
     }
 }
