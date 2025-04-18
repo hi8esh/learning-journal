@@ -1,19 +1,21 @@
-/* General body styling */
+/* ========== General Body Styling ========== */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Source Sans 3", "Roboto", sans-serif;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #505050;
 }
 
-/* ------- Header ------- */
+/* ========== Header ========== */
 header {
     padding: 1rem;
+    display: flex;
+    align-items: center;
 }
 
-header, .logo-and-title {
+.logo-and-title {
     display: flex;
     align-items: center;
 }
@@ -33,7 +35,7 @@ nav {
     display: flex;
     margin-left: auto;
 }
-    
+
 .nav-link {
     color: black;
     font-size: 0.875rem;
@@ -41,17 +43,16 @@ nav {
     text-decoration: none;
     text-transform: uppercase;
 }
-    
+
 .nav-link:hover {
     cursor: pointer;
 }
-    
+
 .nav-link:focus-visible {
     outline: 2px solid #202020;
 }
 
-/* ------- Main ------- */
-
+/* ========== Main Content ========== */
 .blog-post-full {
     padding: 2rem 1rem;
     max-width: 960px;
@@ -60,9 +61,12 @@ nav {
 
 .blog-post-full img {
     width: 100%;
+    height: 400px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 1.5rem;
 }
 
 .blog-post-full h1 {
@@ -84,7 +88,7 @@ nav {
     margin-bottom: 1.5rem;
 }
 
-/* ------- Featured Post Styles for the homepage (not used on individual posts but can be reused) ------- */
+/* ========== Featured Post (Home) ========== */
 .featured-post {
     background-image: url(../images/feature-img.png);
     background-size: cover;
@@ -96,7 +100,7 @@ nav {
     padding: 1.25em;
     text-decoration: none;
 }
-    
+
 .featured-post:hover {
     cursor: pointer;
     opacity: 0.9;
@@ -106,20 +110,18 @@ nav {
     font-size: var(--font-sm);
     margin: 0;
 }
-    
+
 .page-header {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     margin: 0;
 }
-    
+
 .featured-text {
     font-size: clamp(1rem, 2.5vw, 1.125rem);
     margin: 0;
 }
 
-/* ------ Blog Grid ------- */
-
-/* --- Post Preview Styles --- */
+/* ========== Blog Grid ========== */
 .blog-grid {
     display: grid;
     gap: 3em 0;
@@ -135,19 +137,20 @@ nav {
         "... ... ...";
 }
 
+/* === Post Preview Styles === */
 .blog-post {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
+    margin-bottom: 2rem;
 }
 
 .blog-post:hover {
     transform: translateY(-5px);
 }
 
-/* Images inside blog cards (grid layout) */
 .blog-post img {
     width: 100%;
     height: 200px;
@@ -155,18 +158,6 @@ nav {
     display: block;
     border-radius: 8px;
 }
-
-/* Images inside full blog posts */
-.blog-post-full img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 
 .blog-post time {
     display: block;
@@ -190,7 +181,7 @@ nav {
 .blog-post a {
     display: inline-block;
     margin: 0 20px 20px;
-    color: #007BFF;
+    color: #007bff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -199,14 +190,13 @@ nav {
     text-decoration: underline;
 }
 
-/* Layout for Grid Posts */
-.broke-code { grid-area: brc; }
-.bad-variables { grid-area: bdv; }
+/* Grid Post Areas */
+.broke-code     { grid-area: brc; }
+.bad-variables  { grid-area: bdv; }
 .css-cant-style { grid-area: css; }
-.git-push-pray { grid-area: gpp; }
-.infinite-loop { grid-area: inl; }
-.js-nightmares { grid-area: jsn; }
-
+.git-push-pray  { grid-area: gpp; }
+.infinite-loop  { grid-area: inl; }
+.js-nightmares  { grid-area: jsn; }
 
 .text-multi-line {
     display: -webkit-box;
@@ -215,21 +205,19 @@ nav {
     overflow: hidden;
 }
 
-/* ------- View More button ------- */
-
+/* ========== View More Button ========== */
 .hidden-post {
     display: none;
     margin-bottom: 1.5rem;
 }
 
 .view-more-wrapper {
-    text-align: center;   /* Less top margin */
-    margin: -10em 1em 2em;
-    margin-bottom: 2rem;  /* Still a bit of space before footer */
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 #viewMoreBtn {
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 0.6em 1.2em;
@@ -237,17 +225,14 @@ nav {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    margin-top: 0.5rem;  /* Ensure it's spaced from the grid */
+    margin-top: 0.5rem;
 }
-
 
 #viewMoreBtn:hover {
     background-color: #0056b3;
 }
 
-
-
-/* ------- Footer ------- */
+/* ========== Footer ========== */
 footer {
     background-color: #202020;
     color: whitesmoke;
@@ -257,31 +242,31 @@ footer {
     height: 105px;
     text-align: center;
 }
-    
+
 .footer-title,
 .copyright {
     font-size: 0.875rem;
     margin: 0;
 }
-    
+
 .footer-title {
     font-weight: bold;
 }
 
-/* Media Queries */
-
+/* ========== Media Queries ========== */
 @media (max-width: 600px) {
     .blog-grid {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr;
         gap: 1em;
     }
 
     .blog-post {
-        margin-bottom: 1.5rem; /* Add some bottom spacing to posts */
+        margin-bottom: 1.5rem;
     }
 
     .view-more-wrapper {
-        margin-top: 1rem; /* Ensure there’s some spacing above the button */
+        margin: -3.5rem 1rem 2rem;
+        text-align: center;
     }
 }
 
@@ -290,16 +275,16 @@ footer {
         gap: 3em 2em;
         grid-template-columns: 1em repeat(2, 1fr) 1em;
         grid-template-areas:
-        "... ... ... ..."
-        "... brc bdv ..."
-        "... css gpp ..."
-        "... inl jsn ..."
-        "... ... ... ...";
+            "... ... ... ..."
+            "... brc bdv ..."
+            "... css gpp ..."
+            "... inl jsn ..."
+            "... ... ... ...";
     }
+
     .view-more-wrapper {
-        text-align: center;   /* Less top margin */
-        margin: -4em 1em 2em;
-        margin-bottom: 2rem;  /* Still a bit of space before footer */
+        text-align: center;
+        margin: -6em 1em 2rem;
     }
 }
 
@@ -307,35 +292,35 @@ footer {
     .title-name {
         font-size: 1.25rem;
     }
-    
+
     .fa-book {
         font-size: 1.5rem;
     }
-    
+
     .nav-link {
         font-size: 1rem;
         padding: 0 0.5em;
     }
-    
+
     .featured-post {
         background-image: url(../images/feature-img-wide.png);
         height: 380px;
         padding: 3.375rem;
     }
-    
+
     .date {
         font-size: 1rem;
     }
-    
+
     .featured-title {
         font-size: 2.5rem;
         width: 60%;
     }
-    
+
     .featured-text {
         width: 60%;
     }
-    
+
     .text-multi-line {
         -webkit-line-clamp: 5;
         line-clamp: 5;
@@ -345,14 +330,18 @@ footer {
         gap: 3em 5%;
         grid-template-columns: 1em repeat(3, 1fr) 1em;
         grid-template-areas:
-        "... ... ... ... ..."
-        "... brc bdv css ..."
-        "... gpp inl jsn ..."
-        "... ... ... ... ...";
+            "... ... ... ... ..."
+            "... brc bdv css ..."
+            "... gpp inl jsn ..."
+            "... ... ... ... ...";
     }
+
+    .blog-post {
+        margin-bottom: 2rem;
+    }
+
     .view-more-wrapper {
-        text-align: center;   /* Less top margin */
-        margin: -4em 1em 2em;
-        margin-bottom: 2rem;  /* Still a bit of space before footer */
+        text-align: center;
+        margin: -4em 1em 2rem;
     }
 }
