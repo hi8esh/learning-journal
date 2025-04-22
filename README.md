@@ -11,7 +11,7 @@ Welcome to my **Learning Journal** project! This is a personal blog-style web ap
 
 ## Demo
 
-You can see the live version of the project [here](https://github.com/hi8esh/learning-journal).
+You can see the live version of the project [here](https://theleraningjournal.netlify.app/).
 
 ## Technologies Used
 
